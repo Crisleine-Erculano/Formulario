@@ -5,20 +5,16 @@ import TextField from '@mui/material/TextField'
 function FormularioCadastro() {
    return (
       <form>
-         <TextField id="nome" label="Nome" />
-      
+         <TextField id="nome" label="Nome"  />
          
-         <label>Sobrenome</label>
-         <input type="text" />
-         
-         <label>CPF</label>
-         <input type="text" />
-         
-         <label>Promoções</label>
+         <TextField id="sobrenome" label="Sobrenome" />
+         <TextField id="cpf" label="CPF" />
+
+         {/* <label>Promoções</label>
          <input type="checkbox" />
          
          <label>Novidades</label>
-         <input type="checkbox" />
+         <input type="checkbox" /> */}
 
          <Button type="submit" variant="contained" color="primary">Cadastrar</Button>
       </form>
