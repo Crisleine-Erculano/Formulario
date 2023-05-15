@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, TextField, Switch, FormControlLabel } from "@mui/material";
 
 
 function FormularioCadastro() {
+   const [nome, setNome] = useState("");
+   const [sobrenome, setSobrenome] = useState("");
+   const [cpf, setCpf] = useState("");
+   const [promocoes, setPromocoes] = useState("true");
+   const [novidades, setNovidades] = useState("false");
    return (
-      <form>
+      <form onSubmit={(evento) => {
+         evento.preventDefault();
+      }}>
          <TextField
+            value={nome}
+            onChange={(evento) => {
+               setNome(evento.target.value);
+            }
+            }
+
             id="nome"
             label="Nome"
             margin="normal"
@@ -13,6 +26,11 @@ function FormularioCadastro() {
          />
 
          <TextField
+            value={sobrenome}
+            onChange={(evento) => {
+               setSobrenome(evento.target.value);
+            }
+            }
             id="sobrenome"
             label="Sobrenome"
             margin="normal"
@@ -20,6 +38,11 @@ function FormularioCadastro() {
          />
 
          <TextField
+            value={cpf}
+            onChange={(evento) => {
+               setCpf(evento.target.value);
+            }
+            }
             id="cpf"
             label="CPF"
             margin="normal"
@@ -28,12 +51,20 @@ function FormularioCadastro() {
 
          <FormControlLabel
             label="Promoções"
-            control={<Switch name="promocao" defaultChecked color="primary" />}
+            control={<Switch
+               checked={promocoes}
+               onChange={(evento) => {
+                  setPromocoes(evento.target.checked)
+               }} name="promocoes" color="primary" />}
          />
 
          <FormControlLabel
             label="Novidades"
-            control={<Switch name="novidades" color="primary" />}
+            control={<Switch
+               ckecked={novidades}
+               onChange={(evento) => {
+                  setNovidades(evento.target.checked)
+               }} name="novidades" color="primary" />}
          />
 
          <Button
