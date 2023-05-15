@@ -11,7 +11,7 @@ import '@fontsource/roboto/700.css';
 class App extends Component {
   render() {
     return (
-      <Container>
+      <Container component="article" maxWidth="sm">
         <Typography variant="h3" component="h1" aling="center">Formulário de Cadastro</Typography>
         <FormularioCadastro />
       </Container>
