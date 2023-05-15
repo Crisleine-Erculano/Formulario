@@ -1,14 +1,15 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import FormularioCadastro from './component/FormularioCadastro/FormularioCadastro';
+import { Container } from '@mui/material';
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
+      <Container>
         <h1>Formulário de Cadastro</h1>
         <FormularioCadastro />
-      </Fragment>
+      </Container>
 
     );
   }
