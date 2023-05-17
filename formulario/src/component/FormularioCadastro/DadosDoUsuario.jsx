@@ -9,7 +9,7 @@ function DadosUsuario() {
             label="email"
             type="email"
             margin="normal"
-            variant='outlined'
+            variant="outlined"
             fullWidth
          />
          <TextField
@@ -17,7 +17,7 @@ function DadosUsuario() {
             label="password"
             type="password"
             margin="normal"
-            variant='outlined'
+            variant="outlined"
             fullWidth
          />
          <Button
