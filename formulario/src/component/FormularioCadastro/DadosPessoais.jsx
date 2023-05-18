@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Button, TextField, Switch, FormControlLabel } from "@mui/material";
 
 
-function DadosPessoais(aoEnviar, validarCpf) {
+function DadosPessoais(aoEnviar, validarCPF) {
    const [nome, setNome] = useState("");
    const [sobrenome, setSobrenome] = useState("");
    const [cpf, setCpf] = useState("");
@@ -10,6 +10,7 @@ function DadosPessoais(aoEnviar, validarCpf) {
    const [novidades, setNovidades] = useState("false");
    const [erros, setErros] = useState({cpf:{valido:true, texto:''}});
    return (
+      
       <form onSubmit={(evento) => {
          evento.preventDefault();
          aoEnviar({nome, sobrenome, cpf, promocoes, novidades})
@@ -20,7 +21,6 @@ function DadosPessoais(aoEnviar, validarCpf) {
                setNome(evento.target.value);
             }
             }
-
             id="nome"
             label="Nome"
             margin="normal"
@@ -46,7 +46,7 @@ function DadosPessoais(aoEnviar, validarCpf) {
             }
             }
             onBlur={(evento)=>{
-               const ehValido= validarCpf(evento.target.value)
+               const ehValido= validarCPF(evento.target.value)
                setErros({cpf:ehValido});
             }}
             error={!erros.cpf.valido}
