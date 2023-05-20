@@ -46,7 +46,7 @@ function DadosPessoais(aoEnviar, validarCPF) {
             }
             }
             onBlur={(evento)=>{
-               const ehValido= validarCPF(evento.target.value)
+               const ehValido= validarCPF(cpf)
                setErros({cpf:ehValido});
             }}
             error={!erros.cpf.valido}
