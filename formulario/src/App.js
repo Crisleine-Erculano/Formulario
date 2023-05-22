@@ -6,9 +6,8 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { validarCPF, validarSenha } from './models/cadastro';
-
-
+import { validarCPF, validarSenha } from './Models/cadastro';
+import ValidacoesCadastro from './context/ValidacoesCadastro';
 
 
 class App extends Component {
@@ -24,10 +23,13 @@ class App extends Component {
         >
           Formulário de Cadastro
         </Typography>
-        <FormularioCadastro
-          aoEnviar={aoEnviarForm}
-          validacoes={{cpf:validarCPF, senha:validarSenha, nome:validarSenha}}
-        />
+        <ValidacoesCadastro.Provider
+          value={{ cpf: validarCPF, senha: validarSenha, nome: validarSenha }}
+        >
+          <FormularioCadastro
+            aoEnviar={aoEnviarForm}
+          />
+        </ValidacoesCadastro.Provider>
       </Container>
 
     );
