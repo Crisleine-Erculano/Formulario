@@ -16,11 +16,22 @@ function DadosPessoais(aoEnviar, validacoes) {
       novoEstado[name] = validacoes[name](value);;
       setErros(novoEstado);
    }
+
+   function possoEnviar(){
+      for(let campo in erros){
+         if(!erros[campo].valido){
+            return false;
+         }
+      }
+      return true;
+   }
    return (
 
       <form onSubmit={(evento) => {
          evento.preventDefault();
-         aoEnviar({ nome, sobrenome, cpf, promocoes, novidades })
+         if(possoEnviar()){
+            aoEnviar({ nome, sobrenome, cpf, promocoes, novidades })
+         }
       }}>
          <TextField
             value={nome}

@@ -16,4 +16,4 @@ function validarCPF(cpf) {
    }
  }
 // Vou colocar um export e vou exportar elas como um objeto.
- export{validarCPF, validarSenha}
+ export  {validarCPF, validarSenha}
