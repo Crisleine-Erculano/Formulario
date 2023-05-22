@@ -12,9 +12,21 @@ function DadosUsuario({ aoEnviar, validacoes }) {
       novoEstado[name] = validacoes[name](value);;
       setErros(novoEstado);
    }
+   function possoEnviar(){
+      for(let campo in erros){
+         if(!erros[campo].valido){
+            return false;
+         }
+      }
+      return true;
+   }
+
    return (
       <form onSubmit={(evento) => {
          evento.preventDefault();
+         if(possoEnviar()){
+            aoEnviar({email, senha});
+         }
          aoEnviar({ email, senha });
       }}>
          <TextField
