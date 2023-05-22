@@ -7,6 +7,8 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+import { validarCPF, validarSenha } from './Models/cadastro;
+
 
 class App extends Component {
   render() {
@@ -23,7 +25,7 @@ class App extends Component {
         </Typography>
         <FormularioCadastro
           aoEnviar={aoEnviarForm}
-          validarCPF={validarCPF}
+          validacoes={{cpf:validarCPF, senha:validarSenha}}
         />
       </Container>
 
@@ -33,13 +35,6 @@ class App extends Component {
 function aoEnviarForm(dados) {
   console.log(dados)
 }
-function validarCPF(cpf) {
-  if (cpf.length !== 11) {
-    return { valido: false, texto: "O CPF deve ter 11 dígitos." };
-  } else {
-    return { valido: true, texto: "" };
 
-  }
-}
 
 export default App;

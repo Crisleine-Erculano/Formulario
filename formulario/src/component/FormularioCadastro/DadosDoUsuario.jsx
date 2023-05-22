@@ -30,6 +30,7 @@ function DadosUsuario({aoEnviar}) {
             label="password"
             type="password"
             margin="normal"
+            nome="senha"
             variant="outlined"
             fullWidth
          />
